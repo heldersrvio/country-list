@@ -15,8 +15,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Countries"
-        UserDefaults.standard.removeObject(forKey: "countries")
-        UserDefaults.standard.removeObject(forKey: "flagData")
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         if let storedcountries = UserDefaults.standard.data(forKey: "countries") {
             performSelector(inBackground: #selector(decodeData(_:)), with: storedcountries)
